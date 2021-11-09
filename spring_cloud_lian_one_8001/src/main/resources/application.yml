@@ -1,0 +1,25 @@
+server:
+  port: 8001
+
+# 连接数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lian
+    username: root
+    password: 6666
+  application:
+    name: spring-cloud-lian
+
+# eureka的配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: spring_cloud_lian_one_8001
+
+# 完善监控信息
+info:
+  app.name: xxx-springcloud
+  company.name: blog.xxx.com

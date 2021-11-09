@@ -1,0 +1,31 @@
+server:
+  port: 80
+
+
+# Eureka的配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+info:
+  app.name: xxx-springcloud
+  company.name: blog.xxx.com
+
+# hystrix监控的配置信息
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: localhost
+
+
+spring:
+  application:
+    name: spring-cloud-zuul
+
+# zuul的配置信息
+zuul:
+  routes:
+    mydept.serviceId: spring-cloud-lian
+    mydept.path: /mydept/**
+  ignored-services: "*"
+  prefix: /star
